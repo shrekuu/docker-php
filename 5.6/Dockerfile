@@ -1,4 +1,4 @@
-FROM php:5.6
+FROM php:5.6-fpm
 LABEL maintainer="dev@chialab.io"
 
 # Download script to install PHP extensions and dependencies
