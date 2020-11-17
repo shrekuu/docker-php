@@ -1,5 +1,7 @@
 FROM php:5.4-fpm
-LABEL maintainer="dev@chialab.io"
+
+RUN sed -i "s/httpredir.debian.org/mirrors.aliyun.com/g" /etc/apt/sources.list
+RUN sed -i "s/security.debian.org/mirrors.aliyun.com\/debian-security/g" /etc/apt/sources.list
 
 # Install PHP extensions and PECL modules.
 RUN buildDeps=" \
