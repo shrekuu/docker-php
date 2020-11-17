@@ -6,6 +6,6 @@
 
 把 docker-phpinfo.conf 软链到 nginx 站点配置里, 然后这样查看 phpinfo 试试
 
-http://你的ip:9054
+http://你的ip:8000/php54.php
 
 `54` 为 php 版本.
