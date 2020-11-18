@@ -2,10 +2,10 @@ FROM php:7.2-fpm
 
 RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
 RUN touch /etc/apt/sources.list
-RUN echo "deb http://mirrors.cloud.tencent.com/debian jessie main contrib non-free" > /etc/apt/sources.list
-RUN echo "deb http://mirrors.cloud.tencent.com/debian jessie-updates main contrib non-free" > /etc/apt/sources.list
-RUN echo "deb-src http://mirrors.cloud.tencent.com/debian jessie main contrib non-free" > /etc/apt/sources.list
-RUN echo "deb-src http://mirrors.cloud.tencent.com/debian jessie-updates main contrib non-free" > /etc/apt/sources.list
+RUN echo "deb http://mirrors.cloud.tencent.com/debian jessie main contrib non-free" >> /etc/apt/sources.list
+RUN echo "deb http://mirrors.cloud.tencent.com/debian jessie-updates main contrib non-free" >> /etc/apt/sources.list
+RUN echo "deb-src http://mirrors.cloud.tencent.com/debian jessie main contrib non-free" >> /etc/apt/sources.list
+RUN echo "deb-src http://mirrors.cloud.tencent.com/debian jessie-updates main contrib non-free" >> /etc/apt/sources.list
 
 # Download script to install PHP extensions and dependencies
 ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/master/install-php-extensions /usr/local/bin/
