@@ -4,7 +4,6 @@ RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
 RUN touch /etc/apt/sources.list
 RUN echo "deb http://mirrors.aliyun.com/debian jessie main" >> /etc/apt/sources.list
 RUN echo "deb http://mirrors.aliyun.com/debian jessie-updates main" >> /etc/apt/sources.list
-RUN echo "deb http://security.debian.org jessie/updates main" >> /etc/apt/sources.list
 
 # Download script to install PHP extensions and dependencies
 ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/master/install-php-extensions /usr/local/bin/
