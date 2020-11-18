@@ -1,9 +1,9 @@
 FROM php:5.4-fpm
 
-RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak \
-    touch /etc/apt/sources.list
-RUN echo "deb http://mirrors.aliyun.com/debian jessie main" >> /etc/apt/sources.list
-RUN echo "deb http://mirrors.aliyun.com/debian jessie-updates main" >> /etc/apt/sources.list
+RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak \
+    echo " " > /etc/apt/sources.list \
+    echo "deb http://mirrors.aliyun.com/debian jessie main" >> /etc/apt/sources.list \
+    echo "deb http://mirrors.aliyun.com/debian jessie-updates main" >> /etc/apt/sources.list
 
 # Install PHP extensions and PECL modules.
 RUN buildDeps=" \
