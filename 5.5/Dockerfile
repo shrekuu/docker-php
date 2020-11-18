@@ -1,7 +1,10 @@
 FROM php:5.5-fpm
 
-RUN sed -i "s/httpredir.debian.org/mirrors.aliyun.com/g" /etc/apt/sources.list
-RUN sed -i "s/security.debian.org/mirrors.aliyun.com\/debian-security/g" /etc/apt/sources.list
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
+RUN touch /etc/apt/sources.list
+RUN echo "deb http://mirrors.aliyun.com/debian jessie main" >> /etc/apt/sources.list
+RUN echo "deb http://mirrors.aliyun.com/debian jessie-updates main" >> /etc/apt/sources.list
+RUN echo "deb http://security.debian.org jessie/updates main" >> /etc/apt/sources.list
 
 # Install PHP extensions and PECL modules.
 RUN buildDeps=" \
