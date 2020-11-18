@@ -12,6 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y \
       curl \
       git \
+      vim \
       zip unzip \
     && install-php-extensions \
       bcmath \
@@ -38,9 +39,13 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
 #      iconv \
 #      mbstring \
 
+# install vimrc
+RUN git clone https://gitee.com/shrekuu/amix-vimrc.git .vim_runtime
+RUN sh ~/.vim_runtime/install_awesome_vimrc.sh
+
 # Install Composer.
-ENV PATH=/root/composer/vendor/bin:$PATH \
-  COMPOSER_ALLOW_SUPERUSER=1
+ENV COMPOSER_ALLOW_SUPERUSER=1
+  
 RUN cd /opt \
   curl https://mirrors.cloud.tencent.com/composer/composer.phar -o /usr/local/bin/composer \
   chmod uga+x /usr/local/bin/composer
