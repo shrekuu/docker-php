@@ -41,7 +41,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
 #      mbstring \
 
 # install vimrc
-RUN git clone https://gitee.com/shrekuu/amix-vimrc.git .vim_runtime
+RUN git clone https://gitee.com/shrekuu/amix-vimrc.git ~/.vim_runtime
 RUN sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # Install Composer.
