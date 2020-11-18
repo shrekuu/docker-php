@@ -1,11 +1,9 @@
 FROM php:5.4-fpm
 
-RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
-RUN touch /etc/apt/sources.list
-RUN echo "deb http://mirrors.tencentyun.com/debian jessie main contrib non-free" >> /etc/apt/sources.list
-RUN echo "deb http://mirrors.tencentyun.com/debian jessie-updates main contrib non-free" >> /etc/apt/sources.list
-RUN echo "deb-src http://mirrors.tencentyun.com/debian jessie main contrib non-free" >> /etc/apt/sources.list
-RUN echo "deb-src http://mirrors.tencentyun.com/debian jessie-updates main contrib non-free" >> /etc/apt/sources.list
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak \
+    touch /etc/apt/sources.list
+RUN echo "deb http://mirrors.aliyun.com/debian jessie main" >> /etc/apt/sources.list
+RUN echo "deb http://mirrors.aliyun.com/debian jessie-updates main" >> /etc/apt/sources.list
 
 # Install PHP extensions and PECL modules.
 RUN buildDeps=" \
